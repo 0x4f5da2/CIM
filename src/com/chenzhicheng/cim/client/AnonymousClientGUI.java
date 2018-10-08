@@ -58,7 +58,7 @@ public class AnonymousClientGUI extends JFrame {
         contentPane.add(sendButt);
         JLabel title = new JLabel("Anynomous Group Chat");
         title.setFont(new Font("等线", Font.PLAIN, 35));
-        title.setBounds(42, 24, 400, 56);
+        title.setBounds(42, 24, 450, 56);
         contentPane.add(title);
 
         nickName = new JTextField();
@@ -72,21 +72,6 @@ public class AnonymousClientGUI extends JFrame {
         contentPane.add(lblNewLabel);
     }
 
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    AnonymousClientGUI frame = new AnonymousClientGUI(null);
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
 
     public void newMsg(String s) {
         this.textArea.append(s + "\n");

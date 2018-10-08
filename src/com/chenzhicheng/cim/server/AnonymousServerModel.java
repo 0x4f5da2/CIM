@@ -19,7 +19,7 @@ public class AnonymousServerModel implements Runnable {
 
     public void run() {
         try {
-            serverSocket = new DatagramSocket(45678);
+            serverSocket = new DatagramSocket(45678);  //todo: customize your own port
             while (true) {
                 byte[] receiveData = new byte[1024];
                 DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
@@ -40,13 +40,12 @@ public class AnonymousServerModel implements Runnable {
     }
 
     public void sendAll(String strToSend, AnonymousClientData e) {
-        //todo
         anonymousServerUpdater.newAnonymousMsg(strToSend + "\n");
         Iterator<AnonymousClientData> it = allUser.iterator();
         while (it.hasNext()) {
             byte[] sendData = new byte[1024];
             AnonymousClientData tmp = it.next();
-            if(tmp.equals(e)) continue;
+            if (tmp.equals(e)) continue;
             if (System.currentTimeMillis() - tmp.getTimestamp() > 600000) {
                 it.remove();
             } else {

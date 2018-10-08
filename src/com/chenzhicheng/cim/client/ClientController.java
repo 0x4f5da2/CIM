@@ -47,10 +47,6 @@ public class ClientController implements SendBtnHandler, ClientUpdater, ActionLi
         );
     }
 
-    public static void main(String[] args) {
-        new ClientController().run();
-    }
-
     public void run() {
         clientLoginGUI.setVisible(true);
     }

@@ -62,7 +62,7 @@ public class ServerGUI extends JFrame {
 
         JLabel onlineUser = new JLabel("Online User:");
         onlineUser.setFont(new Font("等线", Font.PLAIN, 25));
-        onlineUser.setBounds(46, 61, 140, 40);
+        onlineUser.setBounds(46, 61, 200, 40);
         contentPane.add(onlineUser);
 
         onlineNum = new JLabel("0");
@@ -97,22 +97,6 @@ public class ServerGUI extends JFrame {
         clearChatBtn.setBounds(450, 485, 350, 23);
         clearChatBtn.addActionListener((e) -> groupChatArea.setText(""));
         contentPane.add(clearChatBtn);
-    }
-
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    ServerGUI frame = new ServerGUI(null);
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
     }
 
     public void appendGroupChatArea(String s) {

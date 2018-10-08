@@ -73,17 +73,6 @@ public class ClientGUI extends JFrame {
         contentPane.add(enterUsername);
     }
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(() -> {
-                    try {
-                        ClientGUI client = new ClientGUI("test", null, "me");
-                        client.setVisible(true);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-        );
-    }
 
     @Override
     public String toString() {

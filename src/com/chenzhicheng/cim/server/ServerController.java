@@ -13,10 +13,6 @@ public class ServerController implements ServerOnlineStatusHandler, AnonymousSer
         serverModelThread = new Thread(serverModel);
     }
 
-    public static void main(String[] args) {
-        new ServerController().run();
-    }
-
     public void run() {
         serverGUI.setVisible(true);
         anonymousServerModelThread.start();

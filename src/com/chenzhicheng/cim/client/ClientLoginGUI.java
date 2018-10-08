@@ -28,7 +28,7 @@ public class ClientLoginGUI extends JFrame {
 
         JLabel lblChenzhichengsInstentMessage = new JLabel("ChenZhicheng's Instant Message");
         lblChenzhichengsInstentMessage.setFont(new Font("等线", Font.PLAIN, 25));
-        lblChenzhichengsInstentMessage.setBounds(35, 10, 363, 74);
+        lblChenzhichengsInstentMessage.setBounds(35, 10, 425, 74);
         contentPane.add(lblChenzhichengsInstentMessage);
 
         username = new JTextField();
@@ -44,12 +44,12 @@ public class ClientLoginGUI extends JFrame {
 
         JLabel lblUsername = new JLabel("username");
         lblUsername.setFont(new Font("等线", Font.PLAIN, 16));
-        lblUsername.setBounds(95, 94, 74, 17);
+        lblUsername.setBounds(95, 94, 120, 17);
         contentPane.add(lblUsername);
 
         JLabel lblPassword = new JLabel("password");
         lblPassword.setFont(new Font("等线", Font.PLAIN, 16));
-        lblPassword.setBounds(95, 160, 79, 15);
+        lblPassword.setBounds(95, 160, 120, 15);
         contentPane.add(lblPassword);
 
         loginButt = new JButton("LOGIN");
@@ -67,18 +67,6 @@ public class ClientLoginGUI extends JFrame {
         contentPane.add(groupChatBtn);
     }
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    ClientLoginGUI frame = new ClientLoginGUI();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
 
     public JTextField getUsername() {
         return username;

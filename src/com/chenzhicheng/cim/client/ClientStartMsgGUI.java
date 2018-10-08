@@ -27,7 +27,7 @@ public class ClientStartMsgGUI extends JFrame {
 
         JLabel lblNewLabel = new JLabel("Start a message");
         lblNewLabel.setFont(new Font("等线", Font.PLAIN, 35));
-        lblNewLabel.setBounds(33, 29, 248, 38);
+        lblNewLabel.setBounds(33, 29, 350, 38);
         contentPane.add(lblNewLabel);
 
         usernameToStart = new JTextField();
@@ -62,21 +62,6 @@ public class ClientStartMsgGUI extends JFrame {
         contentPane.add(separator);
     }
 
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    ClientStartMsgGUI frame = new ClientStartMsgGUI();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
 
     public JButton getMessageStartBtn() {
         return messageStartBtn;

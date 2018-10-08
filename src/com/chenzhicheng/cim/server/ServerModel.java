@@ -1,7 +1,6 @@
 package com.chenzhicheng.cim.server;
 
 import com.chenzhicheng.cim.protocol.Protocol;
-import com.chenzhicheng.cim.util.QDBC;
 import com.chenzhicheng.cim.util.TimeGetter;
 
 import java.io.BufferedInputStream;
@@ -21,23 +20,16 @@ public class ServerModel implements Runnable {
         this.allUser = new ArrayList<ClientData>();
     }
 
-    public static void main(String[] args) {
-        new ServerModel(null).run();
-    }
-
     public void run() {
         try {
-            ServerSocket serverSock = new ServerSocket(56789);
+            ServerSocket serverSock = new ServerSocket(56789);  //todo: customize the port here
 
             while (true) {
                 try {
-
                     Socket clientSocket = serverSock.accept();
-
                     Thread t = new Thread(new ClientHandler(clientSocket));
                     t.start();
                     System.out.println("got a connection");
-
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -67,41 +59,8 @@ public class ServerModel implements Runnable {
         return false;
     }
 
-    private boolean verify(String username, String password) {
-        System.out.println(username + " " + password);
-        boolean returnVal = false;
-        try{
-            returnVal = QDBC.verify(username, password);
-        } catch (Exception e) {
-            returnVal = false;
-        }
-        return returnVal;
-//        Connection conn = null;
-//        String sql;
-//        PreparedStatement stmt;
-//        String url = "jdbc:mysql://localhost:3306/client?"+
-//                "user=root&password=12345678&useUnicode=true&characterEncoding=UTF8&useSSL=true";
-//        try{
-//            Class.forName("com.mysql.jdbc.Driver");
-//            conn = DriverManager.getConnection(url);
-//
-//            sql = "select * from user where `username`=? and `password`=?";
-//            stmt = conn.prepareStatement(sql);
-//            stmt.setString(1,username);
-//            stmt.setString(2,CalcMD5.clacMD5(password));
-//
-//            ResultSet rs = stmt.executeQuery();
-//            if(rs.next()){
-//                return true;
-//            } else {
-//                return false;
-//            }
-//
-//        } catch (Exception ex){
-//
-//            ex.printStackTrace();
-//        }
-//        return false;
+    private boolean verify(String username, String password) {  //todo: write your own verification code here
+        return true;
     }
 
     public String getOnlineUser() {
