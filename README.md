@@ -46,6 +46,3 @@ A simple chat software which is used to dealing with computer networks and Java 
 
 * 服务器端验证用户名密码部分还跟没有一样（其实就是没有）
 
-* 代码还是跟一坨屎一样，需要重构
-
-* 使用maven或者是gradle管理项目
